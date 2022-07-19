@@ -37,5 +37,26 @@ def merge_k_lists(lists):
         return None
         
     for i in range(1, len(lists)):
-        lists[0] = merge_two_lists(lists[0], lists[1])
+        lists[0] = merge_two_lists(lists[0], lists[i])
     return lists[0]
+
+
+if __name__ == "__main__":
+    first = LinkedListNode(2)
+    first.next = LinkedListNode(8)
+    first.next.next = LinkedListNode(12)
+
+    second = LinkedListNode(3)
+    second.next = LinkedListNode(3)
+    second.next.next = LinkedListNode(5)
+    second.next.next.next = LinkedListNode(13)
+
+    third = LinkedListNode(1)
+    third.next = LinkedListNode(3)
+    third.next.next = LinkedListNode(7)
+    third.next.next.next = LinkedListNode(15)
+
+    result = merge_k_lists([first, second, third])
+    while result is not None:
+        print(result.value)
+        result = result.next
