@@ -25,6 +25,12 @@ def merge_one_into_another(first, second):
             second[k] = first[i]
             i+=1
             k+=1
+
+    if j < len(second_copy):
+        while j < len(second_copy):
+            second[k] = second_copy[j]
+            j+=1
+            k+=1
             
 
     return second
